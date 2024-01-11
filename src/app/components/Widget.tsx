@@ -16,10 +16,7 @@ const widgetStyle: React.CSSProperties = {
 const Widget = ({
     children,
     title
-  }: {
-    children: React.ReactNode
-    title: string
-  }) => (
+  }: { children: React.ReactNode, title: string }) => (
   <div style={widgetStyle}>
     <h3 style={{ margin: 0, padding: '20px 20px 0 20px' }}>{title}</h3>
     <Divider />
