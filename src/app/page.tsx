@@ -20,7 +20,6 @@ const wrapperStyle: React.CSSProperties = {
 const contentStyle: React.CSSProperties = {
   display: "flex",
   justifyContent: "center",
-  height: "100vh",
 };
 
 const pageHeaderStyle: React.CSSProperties = {
@@ -78,7 +77,7 @@ const Home = () => {
                   </Widget>
                 </Col>
                 <Col span={12}>
-                  <Widget title="Widget">
+                  <Widget title="Pie chart with API data">
                     <PieWidget />
                   </Widget>
                 </Col>

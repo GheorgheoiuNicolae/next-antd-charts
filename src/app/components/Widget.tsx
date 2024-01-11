@@ -9,7 +9,8 @@ const widgetStyle: React.CSSProperties = {
   display: "block",
   boxShadow: "2px 3px 3px 0 rgb(0 0 0 / 8%)",
   marginBottom: "20px",
-  maxHeight: '600px'
+  maxHeight: '600px',
+  overflow: 'hidden'
 };
 
 const Widget = ({
