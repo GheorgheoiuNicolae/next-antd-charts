@@ -1,7 +1,7 @@
 "use client";
-import { Column, Line, Pie } from "@antv/g2plot";
+import { Pie } from "@antv/g2plot";
 import { RefObject, useEffect, useRef, useState } from "react";
-
+  
 const months = {
     '01': 'Jan',
     '02': 'Feb',
@@ -52,6 +52,11 @@ function PieWidget() {
   useEffect(() => {
     if (data && initialRender) {
       piePlot = new Pie(containerRef.current,  {
+        color: ['#379d8f',
+          '#56b8a2',
+          '#6eceb2',
+          '#9e76f3'
+        ],
         appendPadding: 10,
         data,
         angleField: 'death',

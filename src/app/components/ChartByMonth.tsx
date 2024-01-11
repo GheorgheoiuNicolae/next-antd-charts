@@ -1,5 +1,5 @@
 "use client";
-import { Column, Line, Scatter } from "@antv/g2plot";
+import { Column } from "@antv/g2plot";
 import { RefObject, useEffect, useRef, useState } from "react";
 
 const months = {
@@ -62,6 +62,10 @@ function BarWidget() {
             { type: "interval-hide-overlap" },
             { type: "adjust-color" },
           ],
+        },
+        columnStyle: {
+          stroke: '#379d8f',
+          fill: '#379d8f',
         },
       });
     }

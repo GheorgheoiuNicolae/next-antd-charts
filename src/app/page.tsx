@@ -41,7 +41,7 @@ const Home = () => {
         <Content style={contentStyle}>
           <div className="container">
             <section className="page-heading container" style={pageHeaderStyle}>
-              <h3 style={{ margin: 0 }}>Page title</h3>
+              <h3 style={{ margin: 0, fontWeight: 'normal' }}>Page title</h3>
               <div className="buttons">
                 <Button
                   type="default"
