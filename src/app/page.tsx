@@ -1,27 +1,21 @@
 "use client";
 import { DownloadOutlined } from "@ant-design/icons";
 import { Button, Layout, Space } from "antd";
-import { NextPage } from "next";
 import React from "react";
 import TopBar from "./components/TopBar";
+import Widget from "./components/Widget";
+import PieWidget from "./components/PieChart";
+import BarWidget from "./components/ChartByMonth";
 import { Col, Row } from 'antd';
 
 const style: React.CSSProperties = { background: '#0092ff', padding: '8px 0' };
-
-// import BarWidget from "./components/barWidget/barWidget";
-// import LineWidget from "./components/lineWidget/lineWidget";
-const { Header, Footer, Content } = Layout;
+const { Content } = Layout;
 
 const wrapperStyle: React.CSSProperties = {
   width: "100%",
   height: "100%",
   background: "#f7f8f7",
 };
-const footerStyle: React.CSSProperties = {
-  textAlign: "center",
-  color: "#fff",
-};
-
 
 const contentStyle: React.CSSProperties = {
   display: "flex",
@@ -32,6 +26,7 @@ const contentStyle: React.CSSProperties = {
 const pageHeaderStyle: React.CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
+  marginBottom: '20px'
 };
 
 const chartsWrapperStyles: React.CSSProperties = {
@@ -76,21 +71,21 @@ const Home = () => {
               </div>
             </section>
             <section className="container" style={chartsWrapperStyles}>
-              {/* <LineWidget />
-              <BarWidget /> */}
-
               <Row style={{width: '100%'}} gutter={[16, 16]} >
                 <Col span={12}>
-                  Chart
+                  <Widget title="Total deaths by Month">
+                    <BarWidget />
+                  </Widget>
                 </Col>
                 <Col span={12}>
-                  Chart
+                  <Widget title="Widget">
+                    <PieWidget />
+                  </Widget>
                 </Col>
               </Row>
             </section>
           </div>
         </Content>
-        <Footer style={footerStyle}>Footer</Footer>
       </Layout>
     </Space>
   );
