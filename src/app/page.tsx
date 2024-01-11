@@ -1,95 +1,99 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import { DownloadOutlined } from "@ant-design/icons";
+import { Button, Layout, Space } from "antd";
+import { NextPage } from "next";
+import React from "react";
+import TopBar from "./components/TopBar";
+import { Col, Row } from 'antd';
 
-export default function Home() {
+const style: React.CSSProperties = { background: '#0092ff', padding: '8px 0' };
+
+// import BarWidget from "./components/barWidget/barWidget";
+// import LineWidget from "./components/lineWidget/lineWidget";
+const { Header, Footer, Content } = Layout;
+
+const wrapperStyle: React.CSSProperties = {
+  width: "100%",
+  height: "100%",
+  background: "#f7f8f7",
+};
+const footerStyle: React.CSSProperties = {
+  textAlign: "center",
+  color: "#fff",
+};
+
+
+const contentStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  height: "100vh",
+};
+
+const pageHeaderStyle: React.CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+};
+
+const chartsWrapperStyles: React.CSSProperties = {
+  display: "flex",
+  flexDirection: "row",
+};
+
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Space direction="vertical" size={[0, 48]} style={wrapperStyle}>
+      <Layout>
+        <TopBar />
+        <Content style={contentStyle}>
+          <div className="container">
+            <section className="page-heading container" style={pageHeaderStyle}>
+              <h3 style={{ margin: 0 }}>Page title</h3>
+              <div className="buttons">
+                <Button
+                  type="primary"
+                  icon={<DownloadOutlined />}
+                  size={"middle"}
+                  style={{ marginRight: "10px" }}
+                >
+                  Export to PDF
+                </Button>
+                <Button
+                  type="default"
+                  icon={<DownloadOutlined />}
+                  size={"middle"}
+                  style={{ marginRight: "10px" }}
+                >
+                  Notes (3)
+                </Button>
+                <Button
+                  type="default"
+                  icon={<DownloadOutlined />}
+                  size={"middle"}
+                  style={{ marginRight: "10px" }}
+                >
+                  Filter
+                </Button>
+              </div>
+            </section>
+            <section className="container" style={chartsWrapperStyles}>
+              {/* <LineWidget />
+              <BarWidget /> */}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+              <Row style={{width: '100%'}} gutter={[16, 16]} >
+                <Col span={12}>
+                  Chart
+                </Col>
+                <Col span={12}>
+                  Chart
+                </Col>
+              </Row>
+            </section>
+          </div>
+        </Content>
+        <Footer style={footerStyle}>Footer</Footer>
+      </Layout>
+    </Space>
+  );
+};
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;
