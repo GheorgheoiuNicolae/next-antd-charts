@@ -50,7 +50,7 @@ function PieWidget() {
   }, []);
 
   useEffect(() => {
-    if (data) {
+    if (data && initialRender) {
       piePlot = new Pie(containerRef.current,  {
         appendPadding: 10,
         data,
@@ -94,7 +94,7 @@ function PieWidget() {
   }, [data]);
 
   return (
-    <section style={{ display: "flex", flex: 1, flexDirection: "column" }}>
+    <section style={{ display: "flex", flex: 1, flexDirection: "column", padding: '40px 0' }}>
       <div style={{ flex: "1" }} ref={containerRef}></div>
     </section>
   );

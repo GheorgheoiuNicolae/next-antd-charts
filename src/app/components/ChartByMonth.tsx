@@ -50,7 +50,7 @@ function BarWidget() {
   }, []);
 
   useEffect(() => {
-    if (data) {
+    if (data && initialRender) {
       stackedBarPlot = new Column(containerRef.current, {
         data: data,
         xField: "month",
@@ -69,13 +69,14 @@ function BarWidget() {
 
   useEffect(() => {
     if (data && initialRender) {
+      console.log('runs')
       setInitialRender(false);
       stackedBarPlot.render();
     }
   }, [data]);
 
   return (
-    <section style={{ display: "flex", flex: 1, flexDirection: "column" }}>
+    <section style={{ display: "flex", flex: 1, flexDirection: "column", padding: '40px 0' }}>
       <div style={{ flex: "1" }} ref={containerRef}></div>
     </section>
   );

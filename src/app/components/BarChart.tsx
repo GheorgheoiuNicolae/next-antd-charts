@@ -17,7 +17,6 @@ function BarWidget() {
       const res = await fetch(endpoint);
       const result = await res.json();
       setData(result.data);
-      console.log('data', result)
     };
     getApiData();
   }, []);

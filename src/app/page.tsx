@@ -1,5 +1,5 @@
 "use client";
-import { DownloadOutlined } from "@ant-design/icons";
+import { DownloadOutlined, FilterOutlined, OrderedListOutlined } from "@ant-design/icons";
 import { Button, Layout, Space } from "antd";
 import React from "react";
 import TopBar from "./components/TopBar";
@@ -44,8 +44,8 @@ const Home = () => {
               <h3 style={{ margin: 0 }}>Page title</h3>
               <div className="buttons">
                 <Button
-                  type="primary"
-                  icon={<DownloadOutlined />}
+                  type="default"
+                  icon={<DownloadOutlined style={{color:"#379d8f"}} />}
                   size={"middle"}
                   style={{ marginRight: "10px" }}
                 >
@@ -53,7 +53,7 @@ const Home = () => {
                 </Button>
                 <Button
                   type="default"
-                  icon={<DownloadOutlined />}
+                  icon={<OrderedListOutlined style={{color:"#379d8f"}}/>}
                   size={"middle"}
                   style={{ marginRight: "10px" }}
                 >
@@ -61,7 +61,7 @@ const Home = () => {
                 </Button>
                 <Button
                   type="default"
-                  icon={<DownloadOutlined />}
+                  icon={<FilterOutlined style={{color:"#379d8f"}} />}
                   size={"middle"}
                   style={{ marginRight: "10px" }}
                 >
